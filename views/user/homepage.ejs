@@ -1,0 +1,122 @@
+<html>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var elems = document.querySelectorAll(".carousel");
+      var instances = M.Carousel.init(elems);
+    });
+    
+    var instance = M.Carousel.init({
+      fullWidth: true,
+      fullHeight:true,
+      indicators: true,
+    });
+  </script>
+  <script src="/javascripts/homepagejquery.js"></script>
+  <body>
+    <nav style="background-color: #6D214F">
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left">
+          <li>
+            <a href="#"
+              ><img src="/images/book5.jpg" style="padding:3px" width="67"
+            /></a>
+          </li>
+          <% data.forEach((item,index)=>{ %>
+          <li>
+            <a class="publication" publicationid="<%=item.publicationid%>"
+              ><%=item.publicationname%></a
+            >
+          </li>
+          <% }) %>
+          <li>
+            <div
+              class="col s12"
+              style="
+                display: flex;
+                justify-content: center;
+                width: 586px;
+                margin-left: 223px;
+              "
+            >
+              <i class="material-icons prefix" style="margin-right: 10px"
+                >search</i
+              >
+              <input
+                id="icon_prefix"
+                type="text"
+                class="validate"
+                placeholder="Search..."
+              />
+            </div>
+          </li>
+          <li>
+            <a href="#"
+              ><span class="material-icons" style="line-height: 2.5">
+                account_circle
+              </span></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><span class="material-icons" style="line-height: 2.5">
+                favorite_border
+              </span></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><span class="material-icons" style="line-height: 2.5">
+                shopping_bag
+              </span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="bookcategory"></div>
+    <div id="categorywriter"></div>
+
+
+    <div class="carousel carousel-slider">
+      <a class="carousel-item" href="#one!"
+        ><img
+          src="https://i.pinimg.com/originals/79/dd/fd/79ddfd882f4188b7ff01970c40af5ea5.gif"
+      /></a>
+      
+      <a class="carousel-item" href="#two!"
+        ><img
+        src="https://i.pinimg.com/originals/19/ab/71/19ab7192e68c6799440529cc96485c25.gif"
+    /></a>
+      <a class="carousel-item" href="#three!"
+        ><img
+        src="https://i.pinimg.com/originals/85/6c/28/856c2802155b11f0b9b3019220c753af.gif"
+    /></a>
+    </div>
+      <div id="books" style="display: flex; flex-wrap: wrap;"></div>
+  </body>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+</html>

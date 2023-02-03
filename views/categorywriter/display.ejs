@@ -1,0 +1,97 @@
+<html>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Cnompiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+       
+    </script>
+   
+          
+     
+    <style>
+        .maincontainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:#6D214F;
+            height:100vh;
+            width:100vw
+        }
+        .subcontainer{
+            width: 1050px;
+        height: 360px;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background-color:#f7f1e3;
+        }
+        .heading{
+            font-weight:bold;
+            color: '#2f3640';
+            font-size: 30px;
+            text-align: center;
+
+            
+        }
+        .msgStyle{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: black;
+        }
+    </style>
+    <div class="maincontainer">
+        <div class="subcontainer">
+            <div class="heading">Categorywriter Display <a  href="/categorywriter/categorywriter" target="mw" class="waves-effect waves-teal btn-flat"><i class="material-icons right">add</i>Add Categorywriter</a></div> 
+            <table class="highlight">
+                <thead>
+                  <tr>
+                      <th>Categorywriter Id</th>
+                      <th>BookCategory Id</th>
+                      <th>Publication Id</th>
+                      <th>Categorywriter name</th>
+                      <th>Description</th>
+                      <th>Picture</th>
+                  </tr>
+                </thead>
+                <tbody>
+               <% data.forEach((item,index)=>{%>
+              <tr>
+                <td><%=item.categorywriterid%></td>
+                <td><%=item.bookcategoryid%></td>
+                <td><%=item.publicationid%></td>
+                <td><%=item.categorywritername%></td>
+                <td><%=item.description%></td>
+              
+                <td><a title="Edit"  style="color:black"  href="/categorywriter/displaypicture?categorywriterid=<%=item.categorywriterid%>"><img src='/images/<%=item.picture%>' width='150px' height='40%'/></a></td>
+                <td><%=item.status%></td>
+                <td><a title="Edit"  style="color:black"  href="/categorywriter/displaybyid?categorywriterid=<%=item.categorywriterid%>"><span class="material-icons">
+                    edit
+                    </span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a title="Delete"  style="color:black"  href="/categorywriter/delete?categorywriterid=<%=item.categorywriterid%>"><span class="material-icons">
+                    delete
+                        </span></a>
+                    </td>
+              </tr>
+              <% })%>
+                </tbody>
+                </table>
+ 
+                                  
+                                 
+               
+                </div>
+                </div>
+                
+           
+    
+  
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+     <!-- Compiled and minified JavaScript -->
+     
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     
+     </html>

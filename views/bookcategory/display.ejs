@@ -1,0 +1,107 @@
+<html>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<style>
+    .maincontainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background-color:  #6D214F;
+    }
+
+    .subcontainer {
+        width: 700px;
+        height: 300px;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background-color:#f7f1e3;
+    }
+
+    .heading {
+        font-size: 30px;
+        font-weight: 100px;
+        text-align: center;
+        color: #2f3640;
+
+    }
+</style>
+
+<body style="margin:0px">
+    <div class="maincontainer">
+        <div class="subcontainer">
+            <div class="heading">BookCategory Display <a  href="/bookcategory/bookcategory" target="mw" class="waves-effect waves-teal btn-flat"><i class="material-icons right">add</i>Add BookCategory</a></div> 
+            <form action="/bookcategory/bookcategory" method="post" enctype="multipart/form-data">
+            <table class="highlight">
+                <thead>
+                    <tr>
+                        <th>BookCategoryId</th>
+                        <th>PublicationId</th>
+                        <th>BookCategory Name</th>
+                        <th>Description</th>
+                       <th>Picture</th>
+                     </tr>
+                </thead>
+
+                <tbody>
+                    <% data.forEach((item,index)=>{%>
+                        <tr>
+                            <td>
+                                <%=item.bookcategoryid%>
+                            </td>
+                            <td>
+                                <%=item.publicationid%>
+                            </td>
+                            <td>
+                                <%=item.bookcategoryname%>
+                            </td>
+                            <td>
+                                <%=item.description%>
+                            </td>
+                           
+                            <td><a href="/bookcategory/displaypicture?bookcategoryid=<%=item.bookcategoryid%>"><img src="/images/<%=item.picture%>" width="50vw" height="30vh"></a></td>
+                            <td><a title="edit" style="color:black"
+                                    href="/bookcategory/displaybyid?bookcategoryid=<%=item.bookcategoryid%>">
+                                    <span class="material-icons">
+                                        edit
+                                    </span>
+                                </a>
+                                <a title="delete" style="color:black"
+                                    href="/bookcategory/delete?bookcategoryid=<%=item.bookcategoryid%>">
+                                    <span class="material-icons">
+                                        delete
+                                    </span>
+
+                                </a>
+                            </td>
+                        </tr>
+
+                        <% })%>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<html>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<style>
+    .maincontainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background-color: #6D214F;
+    }
+
+    .subcontainer {
+        width: 1300px;
+        height: 530px;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background-color: #f7f1e3;
+    }
+
+    .heading {
+        font-size: 30px;
+        font-weight: 100px;
+        text-align: center;
+        color: #2f3640;
+
+    }
+</style>
+
+<body style="margin:0px">
+    <div class="maincontainer">
+        <div class="subcontainer">
+            <div class="heading">Books Display <a  href="/books/books" target="mw" class="waves-effect waves-teal btn-flat"><i class="material-icons right">add</i>Add Books</a></div> 
+            <table class="highlight">
+                <thead>
+                    <tr>
+                        <th>BookId</th>
+                        <th>PublicationId</th>
+                        <th>CategorywriterId</th>
+                        <th>BookName</th>
+                        <th>Description</th>
+                        <th>Lanched In Year</th>
+                        <th>No of Pages</th>
+                        <th>Price</th>
+                        <th>OfferPrice</th>
+                        <th>Stock</th>
+                        <th>Status</th>
+                        <th>Picture</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% data.forEach((item,index)=>{%>
+                        <tr>
+                            <td>
+                            <%=item.bookid%>
+                        </td>
+                            <td>
+                                <%=item.publicationid%>
+                            </td>
+                            <td>
+                                <%=item.categorywriterid%>
+                            </td>
+                            <td>
+                                <%=item.bookname%>
+                            </td>
+                            <td>
+                                <%=item.description%>
+                            </td>
+                            <td>
+                                <%=item.launchedinyear%>
+                            </td>
+                            <td>
+                                <%=item.noofpages%>
+                            </td>
+                            <td>
+                                <%=item.price%>
+                            </td>
+                            <td>
+                                <%=item.offerprice%>
+                            </td>
+                           
+                            <td>
+                                <%=item.stock%>
+                            </td>
+                            <td>
+                                <%=item.status%>
+                            </td>
+                            <td><a href="/books/displaypicture?bookid=<%=item.bookid%>"><img src="/images/<%=item.picture%>" width="50vw" height="30vh"></a></td>
+                            <td><a title="edit" style="color:black"
+                                    href="/books/displaybyid?bookid=<%=item.bookid%>">
+                                    <span class="material-icons">
+                                        edit
+                                    </span>
+                                </a>
+                                <a title="delete" style="color:black"
+                                    href="/books/delete?bookid=<%=item.bookid%>">
+                                    <span class="material-icons">
+                                        delete
+                                    </span>
+
+                                </a>
+                            </td>
+                        </tr>
+
+                        <% })%>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+
+</html>
